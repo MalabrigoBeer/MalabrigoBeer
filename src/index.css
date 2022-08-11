@@ -1,13 +1,100 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    /* overflow: hidden; */
+    margin: 0px;
+    /* background-color: black; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.movimientoDeMano{
+    animation-duration: 3s;
+    animation-name: movDeMano;
+    animation-iteration-count:infinite;
+}
+
+@keyframes movDeMano{
+    50%{
+      transform: translateY(20px);  
+    }
+}
+
+.fondo{
+    background-image: url('./fotos/fondo1.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 155vh;
+}
+
+.spotify{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.boxTitulo{
+    width: 100vw;
+    height:13.5vh;
+    background-color: black;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+.boxTiempo{
+    width: 100vw; 
+    height: 27.5vh;
+}
+
+.tickets{
+    width: 75vw; 
+    height: 25vh;
+    margin-top: 50px;
+}
+
+.fotos{
+    width: 75vw;
+    height: 20vh;
+    margin-top: 50px
+}
+
+.spot{
+    width: 90vw;
+    height: 27.5vh;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.tiempos{
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 7px;
+}
+
+@media (min-width:735px){
+    .PosicionIconos{
+        overflow-x: hidden;
+        display: flex;
+        position: absolute;
+        top: 162%;
+        left: 37%;
+    }
+    .fondo{
+        height: 175vh;
+    }
+    .boxTitulo{
+        transform: translateY(-20px);
+        width: 50%;
+    }
+    .boxTiempo{
+        transform: translateY(0px);
+        width: 70%;
+        height: 37.5vh;
+    }
+    .tickets{
+        margin-bottom: 50px;
+    }
+    .spot{
+        margin-top: 90px;
+        width: 50vw;
+    }
 }
