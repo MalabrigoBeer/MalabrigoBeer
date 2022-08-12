@@ -1,7 +1,5 @@
 *{
-    /* overflow: hidden; */
     margin: 0px;
-    /* background-color: black; */
 }
 
 .movimientoDeMano{
@@ -22,6 +20,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 155vh;
+    background-attachment:fixed;
 }
 
 .spotify{
@@ -30,12 +29,22 @@
     overflow: hidden;
 }
 
+.spotify2{
+    width: 90vw;
+    height: 27.5vh;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
 .boxTitulo{
     width: 100vw;
-    height:13.5vh;
-    background-color: black;
-    border: black 1px solid;
-    border-radius: 5px;
+    height:40vh;
+    background-image: url("./fotos/logo.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-size: 100%;
+    margin: 0px;
+    background-position-y:27.5%;
 }
 
 .boxTiempo{
@@ -55,35 +64,83 @@
     margin-top: 50px
 }
 
-.spot{
-    width: 90vw;
-    height: 27.5vh;
-    margin-top: 50px;
-    overflow: hidden;
+.letra{
+    font-family: 'Oswald', sans-serif;
 }
 
 .tiempos{
     margin-left: 10px;
     margin-right: 10px;
     overflow: hidden;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.166);
     border-radius: 7px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
 }
+
+.procimaFecha{
+    overflow: hidden;
+    width: 90%; 
+    background-color: rgba(255, 255, 255, 0.166);
+    border-radius: 10px;
+}
+
+@media (max-width:400px){
+    .boxTitulo{
+        min-height:160px;
+    }
+    .boxTiempo{
+        transform: translateY(0px);
+        width: 100%;
+        height: 42.5vh; 
+        margin: 0px;
+    }
+    .tiempos{
+        margin-top: 3px;
+        margin-left: 3px;
+        margin-right: 3px;
+        height: 35%;
+        font-size: 13px;
+    }
+    .procimaFecha{
+        width: 90%;
+    }
+    .ajuste1{
+        margin: 0px;
+    }
+    .tickets{
+        margin: 50px;
+    }
+    .fotos{
+        margin: 50px;
+    }
+    .fondo{
+        height: 180vh;
+    }
+}
+
 
 @media (min-width:735px){
     .PosicionIconos{
         overflow-x: hidden;
         display: flex;
         position: absolute;
-        top: 162%;
+        top: 207.5%;
         left: 37%;
     }
+    .spotify2{
+        width: 50vw;
+        height: 27.5vh;
+        overflow: hidden;
+        margin-top: 50px;
+    }
     .fondo{
-        height: 175vh;
+        height: 220vh;
     }
     .boxTitulo{
         transform: translateY(-20px);
         width: 50%;
+        background-size: 80%;
     }
     .boxTiempo{
         transform: translateY(0px);
