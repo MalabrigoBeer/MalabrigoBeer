@@ -2,6 +2,13 @@
     margin: 0px;
 }
 
+@font-face
+{
+    font-family: 'lemon-days';
+    src: url('./fuentes/LemonDays.otf');
+}
+
+
 .movimientoDeMano{
     animation-duration: 3s;
     animation-name: movDeMano;
@@ -10,7 +17,7 @@
 
 @keyframes movDeMano{
     50%{
-      transform: translateY(20px);  
+      transform: translateY(25px);  
     }
 }
 
@@ -65,57 +72,67 @@
 }
 
 .letra{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'lemon-days';
 }
 
 .tiempos{
+    height: 45%;
     margin-left: 10px;
     margin-right: 10px;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.166);
     border-radius: 7px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'lemon-days';
     font-size: 17px;
 }
 
 .procimaFecha{
     overflow: hidden;
-    width: 90%; 
-    background-color: rgba(255, 255, 255, 0.166);
+    width: 80%; 
+    background-color: rgba(0, 0, 0, 0.166);
     border-radius: 10px;
 }
 
 @media (max-width:400px){
     .boxTitulo{
-        min-height:160px;
+        min-height:200px;
     }
     .boxTiempo{
-        transform: translateY(0px);
+        transform: translateY(-50px);
         width: 100%;
-        height: 42.5vh; 
-        margin: 0px;
+        height: 32.5vh; 
+        margin-bottom: 7vh;
     }
     .tiempos{
+        margin-right: 2px;
+        margin-left: 2px;
         margin-top: 3px;
-        margin-left: 3px;
-        margin-right: 3px;
         height: 35%;
         font-size: 13px;
     }
     .procimaFecha{
-        width: 90%;
+        width: 70%;
     }
     .ajuste1{
         margin: 0px;
     }
     .tickets{
-        margin: 50px;
+        margin-top: 60px;
+        transform: translateY(-70px);
     }
     .fotos{
-        margin: 50px;
+        margin-top: 60px;
+        /* transform: translateY(70px); */
     }
     .fondo{
-        height: 180vh;
+        height: 200vh;
+    }
+    .spotify2{
+        height: 22.5vh;
+        transform: translateY(20px);
+    }
+    .PosicionIconos{
+        transform: translateY(20px);
     }
 }
 
@@ -130,7 +147,7 @@
     }
     .spotify2{
         width: 50vw;
-        height: 27.5vh;
+        height: 30vh;
         overflow: hidden;
         margin-top: 50px;
     }
