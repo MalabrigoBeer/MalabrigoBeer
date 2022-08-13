@@ -25,7 +25,7 @@
     background-image: url('./fotos/fondo1.png');
     background-position: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     height: 155vh;
     background-attachment:fixed;
 }
@@ -138,6 +138,12 @@
 
 
 @media (min-width:735px){
+    .fondo
+    {
+        background-size: cover;
+    }
+  
+  
     .PosicionIconos{
         overflow-x: hidden;
         display: flex;
