@@ -76,9 +76,9 @@ const App = () => {
                 <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} ><a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://drive.google.com/drive/folders/1gX5HdANtbV4iFxLoSID82R1TLWzlMEb_'>FOTOS</a></button>
             </div>
             <Spotify /> 
-            <div className="text-center" style={{marginTop:'35px' , marginLeft:'140px' , marginBottom: '10px' , overflow:'hidden'}}>
+            <div className="d-flex justify-content-center align-items-center" style={{marginTop:'35px', marginBottom: '25px' , overflow:'hidden', height:'15vh', width:'90vw'}}>
 
-                    <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="me-2"><i className="fa-brands fa-instagram" style={{color: 'black' , fontSize: '50px'}}></i></a>
+                    <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
 
             </div>
       </div>
