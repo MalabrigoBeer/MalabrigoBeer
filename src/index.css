@@ -25,9 +25,10 @@
     background-image: url('./fotos/fondo1.png');
     background-position: 100%;
     background-repeat: no-repeat;
-    background-size: auto;
-    height: 155vh;
+    background-size:auto;
+    height: 230vh;
     background-attachment:fixed;
+    /* background-blend-mode: darken; */
 }
 
 .spotify{
@@ -62,13 +63,14 @@
 .tickets{
     width: 75vw; 
     height: 25vh;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .fotos{
     width: 75vw;
     height: 20vh;
-    margin-top: 50px
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .letra{
@@ -117,48 +119,34 @@
         margin: 0px;
     }
     .tickets{
-        margin-top: 60px;
+        margin-top: 120px;
         transform: translateY(-70px);
     }
     .fotos{
         margin-top: 60px;
+        margin-bottom: 30px;
         /* transform: translateY(70px); */
     }
     .fondo{
-        height: 200vh;
+        height: 250vh;
     }
     .spotify2{
         height: 22.5vh;
-        transform: translateY(20px);
-    }
-    .PosicionIconos{
         transform: translateY(20px);
     }
 }
 
 
 @media (min-width:735px){
-    .fondo
-    {
-        background-size: cover;
-    }
-  
-  
-    .PosicionIconos{
-        overflow-x: hidden;
-        display: flex;
-        position: absolute;
-        top: 207.5%;
-        left: 37%;
+    .fondo{
+        background-size:cover;
+        height: 295vh;
     }
     .spotify2{
         width: 50vw;
         height: 30vh;
         overflow: hidden;
         margin-top: 50px;
-    }
-    .fondo{
-        height: 220vh;
     }
     .boxTitulo{
         transform: translateY(-20px);
