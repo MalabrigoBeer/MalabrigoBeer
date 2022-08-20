@@ -8,6 +8,7 @@ const App = () => {
     const [segundos , setSegundos] = useState(0)//igual
     const [horas , setHoras] = useState(0)// divido 60 divido 60
     const [dias , setDias] = useState(0)// divido 60 divido 60 divido 24
+    const [resta , setResta] = useState(0)// divido 60 divido 60 divido 24
 
     useEffect(() => {
       if(tiempo === 0){
@@ -16,8 +17,9 @@ const App = () => {
         },1000)
       }
       let time = new Date("2022-09-10 21:00:00");
-      let tiemp = Math.trunc((time - tiempo)/1000)
-      tiempos(tiemp);
+      let resta = Math.trunc((time - tiempo)/1000)
+      tiempos(resta);
+      setResta(resta);
     },[tiempo])
 
     const tiempos = (resta) =>{
@@ -74,9 +76,10 @@ const App = () => {
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
-            <div clasName="small">version 1.1</div>
-            <div clasName="small">{Date.now()}</div>
-            <div clasName="small">{typeof(Date.now())}</div>
+            <div className="small">version 1.1</div>
+            <div className="small">{Date.now()}</div>
+            <div className="small">{typeof(Date.now())}</div>
+            <div className="small">resta {resta}</div>
       </div>
     )
 }
