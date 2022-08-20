@@ -31,6 +31,7 @@ const App = () => {
         restoDeMinutos = (restoDeHoras % 60)
         setMinutos(Math.trunc(restoDeHoras / 60))
         setSegundos(restoDeMinutos)
+      }
     }
 
     const nuevaHora = () =>{
@@ -43,6 +44,7 @@ const App = () => {
         let tiemp = Math.trunc((time - (tiempo))/1000)
         tiempos(tiemp);
     }
+
     return (
         <div  style={{width: '100vw' , overflowX: 'hidden'}} className="fondo d-flex flex-column justify-content-center align-items-center">
             <div className="mt-4 boxTitulo d-flex justify-content-center align-items-center" >
