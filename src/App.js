@@ -26,15 +26,10 @@ const App = () => {
         setSegundos(restoDeMinutos)
     }
 
-    const horaActual = () =>{
-      	let aux = new Date()
-      	setTiempo(aux.getTime());
-    }
-
     const nuevaHora = () =>{
         if(tiempo == 0){
           	setInterval(()=>{
-            	horaActual();
+            	setTiempo(Date.now());
         	},1000)
         }
         let time = new Date("2022-09-10 21:00:00");
