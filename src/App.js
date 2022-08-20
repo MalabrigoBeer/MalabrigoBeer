@@ -27,8 +27,7 @@ const App = () => {
     }
 
     const horaActual = () =>{
-      	let aux = new Date()
-      	setTiempo(aux.getTime());
+      	setTiempo(Date.now());
     }
 
     const nuevaHora = () =>{
