@@ -14,7 +14,8 @@ const App = () => {
     useEffect(() => {
       if(tiempo === 0){
           setInterval(()=>{
-            setTiempo(Date.now());
+            let date = new Date();
+            setTiempo(date);
         },1000)
       }
       let time = new Date("2022-09-10 21:00:00");
@@ -78,7 +79,7 @@ const App = () => {
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
-            <div className="small">version 1.3</div>
+            <div className="small">version 1.4</div>
             <div className="small">{Date.now()}</div>
             <div className="small">{typeof(Date.now())}</div>
             <div className="small">resta {resta}</div>
