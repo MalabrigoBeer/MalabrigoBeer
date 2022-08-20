@@ -9,7 +9,6 @@ const App = () => {
     const [horas , setHoras] = useState(0)// divido 60 divido 60
     const [dias , setDias] = useState(0)// divido 60 divido 60 divido 24
     const [resta , setResta] = useState(0)// divido 60 divido 60 divido 24
-    const [time , setTime] = useState(0)// divido 60 divido 60 divido 24
     const [time2 , setTime2] = useState(0)// divido 60 divido 60 divido 24
 
     useEffect(() => {
@@ -19,7 +18,6 @@ const App = () => {
         },1000)
       }
       let time = new Date("2022-09-10 21:00:00");
-      setTime(time);
       setTime2(time.getTime());
       let resta = Math.trunc((time.getTime() - tiempo)/1000)
       tiempos(resta);
@@ -84,7 +82,6 @@ const App = () => {
             <div className="small">{Date.now()}</div>
             <div className="small">{typeof(Date.now())}</div>
             <div className="small">resta {resta}</div>
-            <div className="small">time1 {time}</div>
             <div className="small">time2 {time2}</div>
       </div>
     )
