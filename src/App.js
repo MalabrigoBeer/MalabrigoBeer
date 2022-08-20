@@ -10,7 +10,14 @@ const App = () => {
     const [dias , setDias] = useState(0)// divido 60 divido 60 divido 24
 
     useEffect(() => {
-        nuevaHora()
+      if(tiempo === 0){
+          setInterval(()=>{
+            setTiempo(Date.now());
+        },1000)
+      }
+      let time = new Date("2022-09-10 21:00:00");
+      let tiemp = Math.trunc((time - (tiempo))/1000)
+      tiempos(tiemp);
     },[tiempo])
 
     const tiempos = (resta) =>{
@@ -24,22 +31,6 @@ const App = () => {
         restoDeMinutos = (restoDeHoras % 60)
         setMinutos(Math.trunc(restoDeHoras / 60))
         setSegundos(restoDeMinutos)
-    }
-
-    const horaActual = () =>{
-      	let aux = new Date()
-      	setTiempo(aux.getTime());
-    }
-
-    const nuevaHora = () =>{
-        if(tiempo == 0){
-          	setInterval(()=>{
-            	horaActual();
-        	},1000)
-        }
-        let time = new Date("2022-09-10 21:00:00");
-        let tiemp = Math.trunc((time - (tiempo))/1000)
-        tiempos(tiemp);
     }
 
     return (
