@@ -74,6 +74,7 @@ const App = () => {
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
+            <div clasName="small">version 1.1</div>
       </div>
     )
 }
