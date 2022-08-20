@@ -31,17 +31,17 @@ const App = () => {
         restoDeMinutos = (restoDeHoras % 60)
         setMinutos(Math.trunc(restoDeHoras / 60))
         setSegundos(restoDeMinutos)
-      }
     }
 
     const nuevaHora = () =>{
-      if(inicio === 0){
-          setInicio(1)  
-          setInterval(()=>{
-            setResta(Math.trunc((fechaLimite - Date.now())/1000))
-          }, 1000)
-      }
-      tiempos();
+        if(tiempo == 0){
+          	setInterval(()=>{
+            	setTiempo(Date.now());
+        	},1000)
+        }
+        let time = new Date("2022-09-10 21:00:00");
+        let tiemp = Math.trunc((time - (tiempo))/1000)
+        tiempos(tiemp);
     }
     return (
         <div  style={{width: '100vw' , overflowX: 'hidden'}} className="fondo d-flex flex-column justify-content-center align-items-center">
