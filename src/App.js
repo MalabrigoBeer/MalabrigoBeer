@@ -76,6 +76,7 @@ const App = () => {
             </div>
             <div clasName="small">version 1.1</div>
             <div clasName="small">{Date.now()}</div>
+            <div clasName="small">{typeof(Date.now())}</div>
       </div>
     )
 }
