@@ -78,11 +78,12 @@ const App = () => {
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
-            <div className="small">version 1.2</div>
+            <div className="small">version 1.3</div>
             <div className="small">{Date.now()}</div>
             <div className="small">{typeof(Date.now())}</div>
             <div className="small">resta {resta}</div>
             <div className="small">time2 {time2}</div>
+            <div className="small">time3 {typeof(time2)}</div>
       </div>
     )
 }
