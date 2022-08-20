@@ -16,7 +16,7 @@ const App = () => {
         },1000)
       }
       let time = new Date("2022-09-10 21:00:00");
-      let tiemp = Math.trunc((time - (tiempo))/1000)
+      let tiemp = Math.trunc((time - tiempo)/1000)
       tiempos(tiemp);
     },[tiempo])
 
@@ -75,6 +75,7 @@ const App = () => {
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
             <div clasName="small">version 1.1</div>
+            <div clasName="small">{Date.now()}</div>
       </div>
     )
 }
