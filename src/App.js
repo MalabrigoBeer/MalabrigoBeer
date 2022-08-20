@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import Spotify from './spotify.js'
-import dedo from './fotos/dedo.png'
+
+let time = Date.parse('10 Oct 2022 21:00:00 GMT-2')
 
 const App = () => {
-    const [tiempo , setTiempo] = useState(0);
+    const [inicio , setInicio] = useState(0);
+    const [fechaLimite] = useState(time)
+    const [resta , setResta] = useState(0);
     const [minutos , setMinutos] = useState(0)// divido 60 
     const [segundos , setSegundos] = useState(0)//igual
     const [horas , setHoras] = useState(0)// divido 60 divido 60
     const [dias , setDias] = useState(0)// divido 60 divido 60 divido 24
+    const [fechaActualMiliSegundos , setFechaActualMiliSegundos] = useState(Date.now())
+    const [fechaActualSegundos , setFechaActualSegundos] = useState(Date.now()/1000)
+    const [fechaActualSegundosTruncada , setFechaActualSegundosTruncada] = useState(Math.trunc(Date.now()/1000))
 
     useEffect(() => {
-        nuevaHora()
-    },[tiempo])
+      nuevaHora()
+    })
 
-    const tiempos = (resta) =>{
+    const tiempos = () =>{
+      if(resta){
         let restoDeDias = 0;
         let restoDeHoras = 0;
         let restoDeMinutos = 0;
@@ -36,50 +43,55 @@ const App = () => {
         let tiemp = Math.trunc((time - (tiempo))/1000)
         tiempos(tiemp);
     }
-
     return (
         <div  style={{width: '100vw' , overflowX: 'hidden'}} className="fondo d-flex flex-column justify-content-center align-items-center">
-            <div className="boxTitulo d-flex justify-content-center align-items-center" ></div>
+            <div className="mt-4 boxTitulo d-flex justify-content-center align-items-center" >
+                <p className='text-center' style={{fontSize: '45px', letterSpacing:'2px',  fontFamily:'fantasy' , color: 'white' , fontWeight: '7.5px'}}>MALABRIGO BEER</p>
+            </div>
             <div className="text-center row mt-2 d-flex justify-content-center align-items-center boxTiempo">
-                <div className='d-flex justify-content-center align-items-center'>
-                  <p className="letra" style={{fontSize:'32.5px' , letterSpacing:'9.5px', textShadow: 'white 0.1em 0.1em 0.1em'}}>PROXIMA FECHA!!!</p>
+                <div className=' border border-dark' style={{overflow: 'hidden' , width: '90%', backgroundColor: 'white' , borderRadius: '10px'}}>
+                  <p style={{fontSize:'32.5px' , letterSpacing:'6.5px'}}>PROXIMA FECHA</p>
                 </div>
-                <div className=' border border-dark tiempos text-center' style={{width: '18%'}}>
-                  <p className="text-center ajuste1" style={{borderBottom: 'black solid 1px' }}>{dias !== 1 ? 'DIAS' : 'DIA'}</p>
-                  <p style={{fontSize: '25px' , fontWeight: '3.5px' }} className="text-center">{dias}</p>
+                <div className=' border border-dark tiempos' style={{width: '20%'}}>
+                  <p style={{fontSize: '17px',borderBottom: 'black solid 1px'}}>DIAS</p>
+                  <p style={{fontSize: '25px' , fontWeight: '3.5px'}} className="text-center">{dias}</p>
                 </div>
-                <div className=' border border-dark tiempos text-center' style={{width: '18%'}}>
-                    <p className="text-center ajuste1" style={{borderBottom: 'black solid 1px' }}>{horas !== 1 ? 'HORAS' : 'HORA'}</p>
-                    <p style={{fontSize: '25px' , fontWeight: '3.5px' }} className="text-center">{horas < 10 ? `0${horas}` : horas}</p>
+                <div className=' border border-dark tiempos' style={{width: '20%'}}>
+                    <p style={{fontSize: '17px',borderBottom: 'black solid 1px'}}>HORAS</p>
+                    <p style={{fontSize: '25px' , fontWeight: '3.5px'}} className="text-center">{horas < 10 ? `0${horas}` : horas}</p>
                 </div>
-                <div className=' border border-dark tiempos text-center' style={{width: '18%'}}>
-                    <p className="text-center ajuste1" style={{borderBottom: 'black solid 1px' }}>MIN</p>
-                    <p style={{fontSize: '25px' , fontWeight: '3.5px' }} className="text-center">{minutos < 10 ? `0${minutos}` : minutos}</p>
+                <div className=' border border-dark tiempos' style={{width: '20%'}}>
+                    <p style={{fontSize: '17px',borderBottom: 'black solid 1px'}}>MIN</p>
+                    <p style={{fontSize: '25px' , fontWeight: '3.5px'}} className="text-center">{minutos < 10 ? `0${minutos}` : minutos}</p>
                 </div>
-                <div className=' border border-dark tiempos text-center' style={{width: '18%'}}>
-                    <p className="text-center ajuste1" style={{borderBottom: 'black solid 1px' }}>SEG</p>
-                    <p style={{fontSize: '25px' , fontWeight: '3.5px' }} className="text-center">{segundos < 10 ? `0${segundos}` : segundos}</p>
+                <div className=' border border-dark tiempos' style={{width: '20%'}}>
+                    <p style={{fontSize: '17px',borderBottom: 'black solid 1px'}}>SEG</p>
+                    <p style={{fontSize: '25px' , fontWeight: '3.5px'}} className='text-center'>{segundos < 10 ? `0${segundos}` : segundos}</p>
                 </div>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center tickets'>
-                <p className='text-center letra' style={{fontSize:'30px' , textShadow: 'white 0.1em 0.1em 0.1em'}} >CONSEGUI TU TICKET!</p>
-                <p className="text-center movimientoDeMano" style={{fontSize:'40px' , textShadow: 'white 0.1em 0.1em 0.1em'}}><img src={dedo} height="60px" ></img></p>
-               <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://wa.me/+543482586525'> <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >TICKET</button></a>
+                <p className='text-center' style={{fontSize:'30px' , textShadow: 'white 0.1em 0.1em 0.1em'}} >CONSEGUI TU TICKET</p>
+                <p className="text-center movimientoDeMano" style={{fontSize:'40px' , textShadow: 'white 0.1em 0.1em 0.1em'}}><i className="fa-solid fa-hand-point-down"></i><i className="fa-solid fa-hand-back-point-down"></i></p>
+                <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} ><a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://wa.me/+543482586525'>TICKET</a></button>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
-                <p className='text-center letra' style={{fontSize:'30px'  , textShadow: 'white 0.1em 0.1em 0.1em'}} >COMO LLEGAR?</p>
-                <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREDIO MBEER</button></a>
+                <p className='text-center' style={{fontSize:'30px'  , textShadow: 'white 0.1em 0.1em 0.1em'}} >FOTOS DE LA EDICION ANTERIOR</p>
+                <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} ><a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://drive.google.com/drive/folders/1gX5HdANtbV4iFxLoSID82R1TLWzlMEb_'>FOTOS</a></button>
             </div>
-            <div className='d-flex flex-column justify-content-center align-items-center fotos' >
-                <p className='text-center letra' style={{fontSize:'30px'  , textShadow: 'white 0.1em 0.1em 0.1em'}} >FOTOS DE LA ULTIMA EDICION!</p>
-                <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://drive.google.com/drive/folders/1gX5HdANtbV4iFxLoSID82R1TLWzlMEb_'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >FOTOS</button></a>
+            <div className='spot'>
+                <Spotify /> 
             </div>
-            <Spotify /> 
-            <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
-                <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
+            <div className="PosicionIconos" style={{marginTop:'15px' , marginLeft:'140px' , marginBottom: '10px'}}>
+                <div style={{height: '8vh' , width: '50vw'}} className='d-flex justify-content-end align-items-center'>
+                    <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="me-2"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
+                    <a href='https://open.spotify.com/playlist/7HszEHQMv072tDGcNMhw9D?si=657ba61b4e884fc4' target="_blank"  className="me-4"><i style={{color: 'white' , fontSize: '50px'}} className="fa-brands fa-spotify"></i></a>
+                </div>
             </div>
+            <div>Fecha Actual en milisegundos: {fechaActualMiliSegundos}</div>
+            <div>Fecha Actual en segundos: {fechaActualSegundos}</div>
+            <div>Fecha Actual en segundos truncada: {fechaActualSegundosTruncada}</div>
       </div>
     )
-}
+  }
   
 export default App;
