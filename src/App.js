@@ -17,7 +17,7 @@ const App = () => {
         },1000)
       }
       let time = new Date("2022-09-10 21:00:00");
-      let resta = Math.trunc((time - tiempo)/1000)
+      let resta = Math.trunc((time.getTime() - tiempo)/1000)
       tiempos(resta);
       setResta(resta);
     },[tiempo])
