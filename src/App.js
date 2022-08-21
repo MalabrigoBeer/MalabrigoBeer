@@ -32,10 +32,10 @@ const App = () => {
         let restoDeHoras = 0;
         let restoDeMinutos = 0;
         restoDeDias = (resta % 86400)
-        setDias(Math.trunc(resta / 86400))
         restoDeHoras = (restoDeDias % 3600)
-        setHoras(Math.trunc(restoDeDias / 3600))
         restoDeMinutos = (restoDeHoras % 60)
+        setHoras(Math.trunc(restoDeDias / 3600))
+        setDias(Math.trunc(resta / 86400))
         setMinutos(Math.trunc(restoDeHoras / 60))
         setSegundos(restoDeMinutos)
     }
