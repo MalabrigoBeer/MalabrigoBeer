@@ -3,31 +3,31 @@ import Spotify from './spotify.js'
 import dedo from './fotos/dedo.png'
 
 const App = () => {
-    const [currDate , setCurrDate] = useState(0);
-    const [minutos , setMinutos] = useState(0)// divido 60 
-    const [segundos , setSegundos] = useState(0)//igual
-    const [horas , setHoras] = useState(0)// divido 60 divido 60
-    const [dias , setDias] = useState(0)// divido 60 divido 60 divido 24
-    const [resta , setResta] = useState(0)// divido 60 divido 60 divido 24
-    const [partyTs , setPartyTs] = useState(0)// divido 60 divido 60 divido 24
+    const [currTs , setCurrTs] = useState(0);
+    const [partyTs , setPartyTs] = useState(0);
+    const [minutos , setMinutos] = useState(0); // divido 60 
+    const [segundos , setSegundos] = useState(0); //igual
+    const [horas , setHoras] = useState(0); // divido 60 divido 60
+    const [dias , setDias] = useState(0); // divido 60 divido 60 divido 24
+    const [resta , setResta] = useState(0); // divido 60 divido 60 divido 24
 
     useEffect(() => {
-      if(currDate === 0){
+      if(currTs === 0){
           setInterval(()=>{
             let date = new Date();
-            setCurrDate(Math.floor(date.getTime() / 1000));
+            setCurrTs(Math.floor(date.getTime() / 1000));
         },1000)
       }
       let party_date = new Date("2022-09-10 21:00:00");
       let party_ts = Math.floor(party_date.getTime() / 1000)
-      let resta = Math.trunc(party_ts - currDate)
-      calc_tiempos(resta);
+      let resta = Math.trunc(party_ts - currTs)
+      calcTiempos(resta);
       
       setPartyTs(party_ts);
       setResta(resta);
-    },[currDate])
+    },[currTs])
 
-    const calc_tiempos = (resta) =>{
+    const calcTiempos = (resta) =>{
         let restoDeDias = 0;
         let restoDeHoras = 0;
         let restoDeMinutos = 0;
