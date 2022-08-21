@@ -3,29 +3,31 @@ import Spotify from './spotify.js'
 import dedo from './fotos/dedo.png'
 
 const App = () => {
-    const [tiempo , setTiempo] = useState(0);
+    const [currDate , setCurrDate] = useState(0);
     const [minutos , setMinutos] = useState(0)// divido 60 
     const [segundos , setSegundos] = useState(0)//igual
     const [horas , setHoras] = useState(0)// divido 60 divido 60
     const [dias , setDias] = useState(0)// divido 60 divido 60 divido 24
     const [resta , setResta] = useState(0)// divido 60 divido 60 divido 24
-    const [time2 , setTime2] = useState(0)// divido 60 divido 60 divido 24
+    const [partyTs , setPartyTs] = useState(0)// divido 60 divido 60 divido 24
 
     useEffect(() => {
-      if(tiempo === 0){
+      if(currDate === 0){
           setInterval(()=>{
             let date = new Date();
-            setTiempo(date);
+            setCurrDate(Math.floor(date.getTime() / 1000));
         },1000)
       }
-      let time = new Date("2022-09-10 21:00:00");
-      setTime2(time.getTime());
-      let resta = Math.trunc((time.getTime() - tiempo)/1000)
-      tiempos(resta);
+      let party_date = new Date("2022-09-10 21:00:00");
+      let party_ts = Math.floor(party_date.getTime() / 1000)
+      let resta = Math.trunc(party_ts - currDate)
+      calc_tiempos(resta);
+      
+      setPartyTs(party_ts);
       setResta(resta);
-    },[tiempo])
+    },[currDate])
 
-    const tiempos = (resta) =>{
+    const calc_tiempos = (resta) =>{
         let restoDeDias = 0;
         let restoDeHoras = 0;
         let restoDeMinutos = 0;
@@ -64,27 +66,25 @@ const App = () => {
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center tickets'>
                 <p className='text-center letra' style={{fontSize:'30px' , textShadow: 'white 0.1em 0.1em 0.1em'}} >CONSEGUI TU TICKET!</p>
-                <p className="text-center movimientoDeMano" style={{fontSize:'40px' , textShadow: 'white 0.1em 0.1em 0.1em'}}><img src={dedo} height="60px" ></img></p>
-               <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://wa.me/+543482586525'> <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >TICKET</button></a>
+                <p className="text-center movimientoDeMano" style={{fontSize:'40px' , textShadow: 'white 0.1em 0.1em 0.1em'}}><img src={dedo} height="60px" alt="mano" ></img></p>
+               <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" rel="noreferrer" href='https://wa.me/+543482586525'> <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >TICKET</button></a>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
                 <p className='text-center letra' style={{fontSize:'30px'  , textShadow: 'white 0.1em 0.1em 0.1em'}} >COMO LLEGAR?</p>
-                <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREVIO M.BEER</button></a>
+                <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" rel="noreferrer" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREVIO M.BEER</button></a>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
                 <p className='text-center letra' style={{fontSize:'30px'  , textShadow: 'white 0.1em 0.1em 0.1em'}} >FOTOS DE LA ULTIMA EDICION!</p>
-                <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" href='https://drive.google.com/drive/folders/1gX5HdANtbV4iFxLoSID82R1TLWzlMEb_'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >FOTOS</button></a>
+                <a style={{textDecoration: 'none' , color: 'white'}} target="_blank" rel="noreferrer" href='https://drive.google.com/drive/folders/1gX5HdANtbV4iFxLoSID82R1TLWzlMEb_'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >FOTOS</button></a>
             </div>
             <Spotify /> 
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
-                <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
+                <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" rel="noreferrer" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
-            <div className="small">version 1.4</div>
-            <div className="small">{Date.now()}</div>
-            <div className="small">{typeof(Date.now())}</div>
+            <div className="small">version 1.5</div>
             <div className="small">resta {resta}</div>
-            <div className="small">time2 {time2}</div>
-            <div className="small">time3 {typeof(time2)}</div>
+            <div className="small">party_ts {partyTs}</div>
+            <div className="small">party_ts type {typeof(partyTs)}</div>
       </div>
     )
 }
