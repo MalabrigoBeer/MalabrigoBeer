@@ -3,15 +3,10 @@ import Spotify from './spotify.js'
 import dedo from './fotos/dedo.png'
 
 const App = () => {
-    const [currTs , setCurrTs] = useState(0);
-    const [currDate , setCurrDate] = useState(0);
-    const [partyTs , setPartyTs] = useState(0);
-    const [partyDate , setPartyDate] = useState(0);
     const [minutos , setMinutos] = useState(0); // divido 60 
     const [segundos , setSegundos] = useState(0); //igual
     const [horas , setHoras] = useState(0); // divido 60 divido 60
     const [dias , setDias] = useState(0); // divido 60 divido 60 divido 24
-    const [resta , setResta] = useState(0); // divido 60 divido 60 divido 24
     const calcTiempos = (resta) =>{
         let restoDeDias = (resta % 86400);
         let restoDeHoras = (restoDeDias % 3600);
@@ -29,11 +24,6 @@ const App = () => {
             let party_date = new Date("2022-09-10 21:00:00".replace(/-/g, "/"))
             let party_ts = Math.floor(party_date.getTime() / 1000);
             let resta = Math.trunc(party_ts - curr_ts);
-            setCurrDate(curr_date.toLocaleDateString());
-            setCurrTs(curr_ts);
-            setPartyDate(party_date.toLocaleDateString());
-            setPartyTs(party_ts);
-            setResta(resta);
             calcTiempos(resta);
         },1000)
     },[])
@@ -81,16 +71,6 @@ const App = () => {
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" rel="noreferrer" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
-            <div className="small">version 1.7</div>
-            <div className="small">currDate {currDate}</div>
-            <div className="small">currDate type {typeof(currDate)}</div>
-            <div className="small">currTs {currTs}</div>
-            <div className="small">currTs type {typeof(currTs)}</div>
-            <div className="small">partyDate {partyDate}</div>
-            <div className="small">partyDate type {typeof(partyDate)}</div>
-            <div className="small">partyTs {partyTs}</div>
-            <div className="small">partyTs type {typeof(partyTs)}</div>
-            <div className="small">resta {resta}</div>
       </div>
     )
 }
