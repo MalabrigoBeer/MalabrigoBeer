@@ -26,10 +26,9 @@ const App = () => {
         setInterval(()=>{
             let curr_date = new Date();
             let curr_ts = Math.floor(curr_date.getTime() / 1000);
-            let party_date = new Date("2022-09-10 21:00:00");
+            let party_date = new Date("2022-09-10 21:00:00".replace(/-/g, "/"))
             let party_ts = Math.floor(party_date.getTime() / 1000);
             let resta = Math.trunc(party_ts - curr_ts);
-            console.log(curr_date);
             setCurrDate(curr_date.toLocaleDateString());
             setCurrTs(curr_ts);
             setPartyDate(party_date.toLocaleDateString());
@@ -82,7 +81,7 @@ const App = () => {
             <div className='d-flex justify-content-center align-items-center' style={{marginTop:'35px' , marginBottom: '25px' , overflow:'hidden' , height:'15vh' , width:'90vw'}}>
                 <a href='https://www.instagram.com/malabrigobeer/?hl=es' target="_blank" rel="noreferrer" className="text-center"><i className="fa-brands fa-instagram" style={{color: 'white' , fontSize: '50px'}}></i></a>
             </div>
-            <div className="small">version 1.6</div>
+            <div className="small">version 1.7</div>
             <div className="small">currDate {currDate}</div>
             <div className="small">currDate type {typeof(currDate)}</div>
             <div className="small">currTs {currTs}</div>
