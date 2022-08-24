@@ -61,12 +61,12 @@ const App = () => {
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center tickets'>
             <div className="d-flex justify-content-center align-items-center" style={{height: '100px'}}><img src={ticket} className="ticket" alt="ticket"></img></div>
-                <p className="text-center movimientoDeMano" style={{fontSize:'40px' , textShadow: 'white 0.1em 0.1em 0.1em'}}><img alt="dedo" src={dedo} height="60px" ></img></p>
+                <p className="text-center movimientoDeMano" style={{fontSize:'40px' , textShadow: 'white 0.1em 0.1em 0.1em'}}><img alt="dedo" src={dedo} style={{height: '60px', zIndex:'20'}} ></img></p>
                <a style={{textDecoration: 'none' , color: 'white' , zIndex:'10'}} target="_blank" rel="noreferrer" href='https://wa.me/+543482586525'> <button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >TICKET</button></a>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
             <div className="d-flex justify-content-center align-items-center" style={{height: '100px'}}><img src={comoLLegar} className="fotosDelaUltimaBeer" alt="comollegar"></img></div>
-                <a style={{textDecoration: 'none' , color: 'white' , zIndex:'10'}} target="_blank" rel="noreferrer" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREVIO M.BEER</button></a>
+                <a style={{textDecoration: 'none' , color: 'white' , zIndex:'10'}} target="_blank" rel="noreferrer" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREDIO MBEER</button></a>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
                 <div className="d-flex justify-content-center align-items-center" style={{height: '100px'}}><img src={fotosDelaUltimaBeer} className="fotosDelaUltimaBeer" alt="fotosDeLaUltimaEdicion"></img></div>
