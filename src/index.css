@@ -21,6 +21,27 @@
     }
 }
 
+/* fotos */
+.fotosDelaUltimaBeer{
+    height: 600px;
+}
+.ticket{
+    height: 500px;
+}
+.publicidad{
+    margin-top: 100px;
+    height: 800px;
+    width: 150%;
+    z-index: 1;
+}
+.seguimos{
+    margin: 100px;
+    height: 500px;
+}
+.primavera{
+    height: 500px;
+}
+
 .fondo{
     background-image: url('./fotos/fondo1.png');
     background-position: 100%;
@@ -88,6 +109,14 @@
     font-size: 17px;
 }
 
+.tiempos2{
+    height: 45%;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    font-family: 'lemon-days';
+}
+
 .procimaFecha{
     overflow: hidden;
     width: 80%; 
@@ -95,7 +124,50 @@
     border-radius: 10px;
 }
 
+@media(max-height:500px){
+    .insta{
+        display: none;
+    }
+    .fondo{
+        height: 170vh;
+    }
+    .boxPublicidad{
+        transform: translateY(0px);
+    }
+    .tiempos{
+        height:70px !important;
+    }
+    .spotify2{
+        display:none;
+    }
+    .spotify{
+       display:none;
+    }
+    .publicidad{
+        margin: 0px;
+    }
+    .seguimos{
+        display: none;
+    }
+}
+
 @media (max-width:400px){
+    .primavera{
+        height: 400px;
+    }
+    .seguimos{
+        height: 350px;
+    }
+    .publicidad{
+        height: 500px;
+        width: 150%;
+    }
+    .fotosDelaUltimaBeer{
+        height: 500px;
+    }
+    .ticket{
+        height: 400px;
+    }
     .boxTitulo{
         min-height:200px;
     }
@@ -109,7 +181,7 @@
         margin-right: 2px;
         margin-left: 2px;
         margin-top: 3px;
-        height: 35%;
+        height: 32.5%;
         font-size: 13px;
     }
     .procimaFecha{
@@ -132,12 +204,22 @@
     }
     .spotify2{
         height: 22.5vh;
-        transform: translateY(20px);
+        /* transform: translateY(20px); */
     }
 }
 
 
 @media (min-width:735px){
+    .primavera{
+        height: 700px;
+    }
+    .publicidad{
+        margin-top: 100px;
+        /* width: 150%; */
+    }
+    .ticket{
+        height: 600px;
+    }
     .fondo{
         background-size:cover;
         height: 295vh;
@@ -149,7 +231,7 @@
         margin-top: 50px;
     }
     .boxTitulo{
-        transform: translateY(-20px);
+        transform: translateY(10px);
         width: 50%;
         background-size: 80%;
     }
