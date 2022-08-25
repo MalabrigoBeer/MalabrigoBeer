@@ -47,6 +47,7 @@
     background-image: url('./fotos/fondo.png');
     background-clip: content-box;
     background-repeat: no-repeat;
+    background-position: center;
     background-size:auto;
     height: 230vh;
     background-attachment:fixed;
