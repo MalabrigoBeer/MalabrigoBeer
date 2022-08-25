@@ -44,13 +44,12 @@
 }
 
 .fondo{
-    background-image: url('./fotos/fondo1.png');
-    background-position: 100%;
+    background-image: url('./fotos/fondo.png');
+    background-clip: content-box;
     background-repeat: no-repeat;
     background-size:auto;
     height: 230vh;
     background-attachment:fixed;
-    /* background-blend-mode: darken; */
 }
 
 .spotify{
@@ -160,7 +159,7 @@
     }
 }
 
-@media (max-width:500px){
+@media (max-width:600px){
     .ConsoguiTuticket{
         width: 95vw;
         height: 20%;
@@ -235,6 +234,8 @@
         /* transform: translateY(70px); */
     }
     .fondo{
+        background-size:auto;
+        background-image: url('./fotos/fondo.png') !important;
         height: 270vh;
     }
     .spotify2{
@@ -244,7 +245,7 @@
 }
 
 
-@media (min-width:735px){
+@media (min-width:935px){
     .ConsoguiTuticket{
         height: 100px;
     }

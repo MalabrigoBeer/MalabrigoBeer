@@ -36,6 +36,7 @@ const App = () => {
     },[])
 
     return (
+        <div style={{width: '100vw' , overflowX: 'hidden' , height:'100vh'}}>
         <div  style={{width: '100vw' , overflowX: 'hidden'}} className="fondo d-flex flex-column justify-content-center align-items-center">
             <div className="boxTitulo d-flex justify-content-center align-items-center" ></div>
             <div className="text-center row mt-2 d-flex justify-content-center align-items-center boxTiempo">
@@ -66,7 +67,7 @@ const App = () => {
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
             <div className="d-flex justify-content-center align-items-center" style={{height: '100px'}}><img src={comoLLegar} className="comoLlegar" alt="comollegar"></img></div>
-                <a style={{textDecoration: 'none' , color: 'white' , zIndex:'10'}} target="_blank" rel="noreferrer" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREVIO M.BEER</button></a>
+                <a style={{textDecoration: 'none' , color: 'white' , zIndex:'10'}} target="_blank" rel="noreferrer" href='https://goo.gl/maps/97vpccZ2NyY6BWfQ7'><button className="btn btn-danger" style={{padding: '20px' , fontSize: '18px'}} >PREDIO M.BEER</button></a>
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center fotos' >
                 <div className="d-flex justify-content-center align-items-center" style={{height: '100px'}}><img src={fotosDelaUltimaBeer} className="fotosDelaUltimaBeer" alt="fotosDeLaUltimaEdicion"></img></div>
@@ -80,6 +81,7 @@ const App = () => {
             <div className="d-flex justify-content-center align-items-center boxPublicidad">
                 <img src={publicidad} className="publicidad" alt="publicidad" ></img>
             </div>
+      </div>
       </div>
     )
 }
