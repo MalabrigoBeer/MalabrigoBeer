@@ -48,7 +48,7 @@
     background-clip: content-box;
     background-repeat: no-repeat;
     background-position: center;
-    background-size:auto;
+    background-size:cover;
     height: 230vh;
     background-attachment:fixed;
 }
@@ -235,7 +235,7 @@
         /* transform: translateY(70px); */
     }
     .fondo{
-        background-size:auto;
+        background-size:cover;
         background-image: url('./fotos/fondo.png') !important;
         height: 270vh;
     }
