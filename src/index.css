@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    scroll-behavior: smooth;
 }
 
 @font-face
@@ -22,34 +23,36 @@
 }
 
 /* fotos */
-.fotosDelaUltimaBeer{
-    height: 60%;
-}
 .ticket{
-    height: 70%;
-}
-.publicidad{
-    margin-top: 100px;
-    height: 200%;
-    width: 150%;
-    z-index: 1;
+    width:100vw;
+    height:50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain; 
 }
 .seguimos{
-    /* margin: 100px */
-    height: 150%;
+    width:100vw;
+    height:90px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain; 
 }
 .primavera{
-    height: 70%;
+    width:100%;
+    height:50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain; 
 }
 
 .fondo{
     background-image: url('./fotos/fondo.png');
     background-clip: content-box;
     background-repeat: no-repeat;
-    background-position: center;
     background-size:auto;
-    height: 100%;
+    height: 100vh;
     background-attachment:fixed;
+    background-position: center;
 }
 
 .spotify{
@@ -85,15 +88,8 @@
 
 .tickets{
     width: 75vw; 
-    height: 25vh;
+    height: 35vh;
     margin-top: 100px;
-}
-
-.fotos{
-    width: 75vw;
-    height: 20vh;
-    margin-top: 100px;
-    margin-bottom: 50px;
 }
 
 .letra{
@@ -101,7 +97,7 @@
 }
 
 .tiempos{
-    height: 45%;
+    height: 50%;
     margin-left: 10px;
     margin-right: 10px;
     overflow: hidden;
@@ -125,6 +121,39 @@
     background-color: rgba(0, 0, 0, 0.166);
     border-radius: 10px;
 }
+/* -------como llegar---------- */
+.comoLlegar{
+    height: 50px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    margin-bottom: 50px;
+}
+
+.fotos{
+    width: 85vw;
+    height: 55vh;
+}
+
+.fotosDelaUltimaBeer{
+    margin-bottom: 50px;
+    width:100%;
+    height:80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain; 
+}
+
+/* -------publicidad------- */
+.boxPublicidad{
+    width:100vw;
+    height:150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
 
 @media(max-height:500px){
     .insta{
@@ -133,14 +162,8 @@
     .fondo{
         height: 170vh;
     }
-    .boxPublicidad{
-        transform: translateY(0px);
-    }
     .tiempos{
         height:70px !important;
-    }
-    .publicidad{
-        margin: 0px;
     }
     .seguimos{
         display: none;
@@ -153,54 +176,10 @@
     }
 }
 
-@media (max-width:350px){
-    .primavera{
-        height: 50% !important;
-    }
-}
-
 @media (max-width:600px){
-    .ConsoguiTuticket{
-        width: 95vw;
-        height: 20%;
-        margin-top: 0px;
-        transform: translateY(-100);
-    }
-    .ticket{
-        margin-top: 0px;
-        height: 40px;
-        width: 100%;
-        transform: translateY(-100);
-    }
-    .boxDeSeguirnos{
-        width: 100%;
-        height: 30px;
-    }
-    .boxPublicidad{
-        height: 100px;
-    }
-    .comoLlegar{
-        height: 30%;
-    }
-    .boxDeSeguirnos{
-        height: 100px;
-    }
-    .seguimos{
-        height: 70%;
-        width: 90%;
-    }
     .primavera{
-        height: 70%;
-    }
-    .seguimos{
-        height: 70%;
-    }
-    .publicidad{
-        height: 100%;
-        width: 150%;
-    }
-    .fotosDelaUltimaBeer{
-        height: 50%;
+        height:35px;
+        width:100%;
     }
     .boxTitulo{
         min-height:200px;
@@ -215,7 +194,7 @@
         margin-right: 2px;
         margin-left: 2px;
         margin-top: 3px;
-        height: 32.5%;
+        height: 60px;
         font-size: 13px;
     }
     .procimaFecha{
@@ -227,11 +206,6 @@
     .tickets{
         height: 20%;
         margin-top: 0px 
-    }
-    .fotos{
-        margin-top: 60px;
-        margin-bottom: 30px;
-        /* transform: translateY(70px); */
     }
     .fondo{
         background-size:auto;
@@ -246,36 +220,13 @@
 
 
 @media (min-width:935px){
-    .ConsoguiTuticket{
-        height: 100px;
+    .primavera{
+        height:70px;
+        width:100%;
     }
     .boxDeSeguirnos{
         height: 50px;
         margin-bottom: 20px ;
-    }
-    .boxPublicidad{
-        height: 300px;
-    }
-    .comoLlegar{
-        height: 50%;
-    }
-    .seguimos{
-        height: 200%;
-    }
-    .fotosDelaUltimaBeer{
-        height: 80%;
-        margin-bottom: 40px ;
-    }
-    .primavera{
-        height: 100%;
-    }
-    .publicidad{
-        height: 70%;
-        margin-top: 100px;
-        width: 150%;
-    }
-    .ticket{
-        height: 50%;
     }
     .fondo{
         background-size:cover;
@@ -296,9 +247,6 @@
         transform: translateY(0px);
         width: 70%;
         height: 37.5vh;
-    }
-    .tickets{
-        margin-bottom: 50px;
     }
     .spot{
         margin-top: 90px;
