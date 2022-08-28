@@ -7,7 +7,6 @@
 {
     font-family: 'lemon-days';
     src: url('./fuentes/LemonDays.otf');
-    color: white;
 }
 
 
@@ -95,6 +94,7 @@
 
 .letra{
     font-family: 'lemon-days';
+    color: white;
 }
 
 .tiempos{
