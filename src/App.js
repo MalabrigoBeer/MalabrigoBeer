@@ -28,7 +28,7 @@ const App = () => {
         setInterval(()=>{
             let curr_date = new Date();
             let curr_ts = Math.floor(curr_date.getTime() / 1000);
-            let party_date = new Date("2022-10-09 21:00:00".replace(/-/g, "/"))
+            let party_date = new Date("2022-11-19 21:00:00".replace(/-/g, "/"))
             let party_ts = Math.floor(party_date.getTime() / 1000);
             let resta = Math.trunc(party_ts - curr_ts);
             calcTiempos(resta);
